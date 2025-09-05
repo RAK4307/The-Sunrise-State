@@ -1,0 +1,400 @@
+/* ==========================================================================
+   1. CSS Variables
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-primary: #1f2937; /* Dark Gray/Blue */
+  --color-secondary: #6b7280; /* Medium Gray */
+  --color-accent: #3a33d1; /* A blue for links/hovers */
+  --color-text: #111827; /* Near black for body text */
+  --color-text-light: #ffffff;
+  --color-background: #ffffff;
+  --color-border: #e5e7eb; /* Light Gray */
+  --color-border-dark: #d1d5db;
+
+  /* Typography */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-size-base: 1rem; /* 16px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;  /* 4px */
+  --spacing-2: 0.5rem;   /* 8px */
+  --spacing-3: 0.75rem;  /* 12px */
+  --spacing-4: 1rem;     /* 16px */
+  --spacing-6: 1.5rem;   /* 24px */
+  --spacing-8: 2rem;     /* 32px */
+  --spacing-10: 2.5rem;  /* 40px */
+
+  /* Borders */
+  --border-radius-sm: 0.25rem;
+  --border-radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: all 150ms ease-in-out;
+}
+
+/* ==========================================================================
+   2. Global Styles & Resets
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   3. Layout
+   ========================================================================== */
+
+.container {
+  max-width: 1200px;
+  padding: var(--spacing-6) var(--spacing-8);
+  margin-inline: auto;
+  font-family: var(--font-family-sans);
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-10);
+  margin-top: var(--spacing-6);
+}
+
+.left-section {
+  grid-column: span 12;
+}
+
+.right-section {
+  grid-column: span 12;
+  margin-top: var(--spacing-6);
+}
+
+/* ==========================================================================
+   4. Carousel Component
+   ========================================================================== */
+
+.carousel-container {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background-color: #0a0a0a;
+  border-radius: var(--border-radius-sm);
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 20%, transparent 100%);
+  padding: var(--spacing-6);
+  color: var(--color-text-light);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: var(--border-radius-full);
+  width: 2.5rem; /* Slightly larger for better touch target */
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.carousel-button:hover {
+  background-color: var(--color-background);
+}
+
+.carousel-button-left {
+  left: var(--spacing-4);
+}
+
+.carousel-button-right {
+  right: var(--spacing-4);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-3);
+}
+
+.dot {
+  width: var(--spacing-2);
+  height: var(--spacing-2);
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.dot.active {
+  background-color: var(--color-primary);
+}
+
+.dot.inactive {
+  background-color: var(--color-border-dark);
+}
+
+/* ==========================================================================
+   5. Articles List
+   ========================================================================== */
+
+.articles-list {
+  margin-top: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  line-height: 1.4;
+}
+
+.bullet {
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-1); /* Adjust for alignment */
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   6. Opinion Section
+   ========================================================================== */
+
+.opinion-title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.opinion-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: center;
+  padding: var(--spacing-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.card-image {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: var(--border-radius-sm);
+}
+
+.card-title {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.card-author {
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary);
+}
+
+.more-link {
+  text-align: right;
+  margin-top: var(--spacing-4);
+}
+
+.more-link a {
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ==========================================================================
+   7. Media Queries (Mobile First)
+   ========================================================================== */
+
+/* Tablet and smaller */
+@media (max-width: 1023px) {
+  .container {
+    padding-inline: var(--spacing-4);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .left-section {
+    grid-column: span 8;
+  }
+  .right-section {
+    grid-column: span 4;
+    margin-top: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .container {
+    padding-inline: var(--spacing-4);
+  }
+  .grid-layout {
+    gap: var(--spacing-6);
+  }
+  .carousel-overlay {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-4);
+  }
+  .carousel-button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* ==========================================================================
+   8. Generic Content Sections (for Politics, Science, etc.)
+   ========================================================================== */
+
+.content-section {
+  padding-top: var(--spacing-10);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--spacing-10);
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-6);
+  color: var(--color-primary);
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.article-card {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.article-card-image-link {
+  display: block;
+}
+
+.article-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.article-card-content {
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows footer to stick to bottom */
+}
+
+.article-card-category {
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-2);
+}
+
+.article-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  flex-grow: 1; /* Pushes author to the bottom */
+}
+
+.article-card-title a {
+  color: inherit;
+}
+
+.article-card-author {
+  color: var(--color-secondary);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-4);
+}

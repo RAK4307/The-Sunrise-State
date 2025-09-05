@@ -1,0 +1,149 @@
+/* --- Main Container & Layout --- */
+.category-page-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.category-page-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.category-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.category-placeholder {
+    color: #6b7280;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* --- Sidebar Section Styling --- */
+.sidebar-title {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    color: #6b7280; /* Muted gray */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sidebar-list a {
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sidebar-list a:hover {
+    color: #0073E6;
+}
+
+/* --- Newsletter Item Styling --- */
+.newsletter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-dot {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+.newsletter-item-title {
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.25rem;
+}
+
+.newsletter-item-desc {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Author Item Styling --- */
+.author-item-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.author-avatar-sidebar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.author-name-sidebar {
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.author-desc-sidebar {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.see-all-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: #0073E6;
+    text-decoration: none;
+}
+
+.see-all-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Layout --- */
+@media (min-width: 768px) {
+    .category-content-grid {
+        /* 2/3 for main content, 1/3 for sidebar */
+        grid-template-columns: 2fr 1fr;
+    }
+}
+

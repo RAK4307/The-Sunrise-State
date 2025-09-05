@@ -1,0 +1,171 @@
+/* Scoped reset to avoid global side-effects */
+.poltics-bg,
+.poltics-bg *,
+.poltics-bg *::before,
+.poltics-bg *::after {
+  box-sizing: border-box;
+}
+
+.poltics-bg {
+  /* Spacing & Sizing */
+  --poltics-spacing-xs: 0.25rem;  /* 4px */
+  --poltics-spacing-sm: 0.5rem;   /* 8px */
+  --poltics-spacing-md: 1rem;     /* 16px */
+  --poltics-spacing-lg: 1.25rem;   /* 24px */
+  --poltics-spacing-xl: 2rem;     /* 32px */
+  --poltics-spacing-2xl: 1.5rem;    /* 48px */
+
+  /* Borders */
+  --poltics-radius-md: 0.375rem; /* 6px */ 
+  --poltics-radius-lg: 0.5rem;   /* 8px */
+
+  margin: 0;
+  padding: var(--poltics-spacing-2xl) 0; 
+  min-height: 100vh;
+}
+
+.poltics-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--poltics-spacing-lg);
+}
+
+.poltics-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--poltics-spacing-2xl);
+}
+
+.poltics-main {
+  flex: 3;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.poltics-sidebar {
+  flex: 2;
+  min-width: 0; /* Prevents flex item from overflowing */
+  margin-top: var(--poltics-spacing-xl);
+}
+
+.poltics-title {
+  margin-bottom: var(--poltics-spacing-lg);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.poltics-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--poltics-spacing-xl);
+}
+
+.poltics-featured {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Placeholder for image skeleton loaders */
+.poltics-featured-img {
+  width: 100%;
+  margin-bottom: var(--poltics-spacing-md);
+  aspect-ratio: 16 / 9; /* More responsive than fixed height */
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--poltics-radius-md);
+}
+
+.poltics-featured-img-real {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--poltics-spacing-md);
+  border-radius: var(--poltics-radius-md);
+  object-fit: cover;
+}
+
+.poltics-meta {
+  margin-bottom: var(--poltics-spacing-xs);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.poltics-featured-title {
+  margin-bottom: var(--poltics-spacing-sm);
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.poltics-featured-desc {
+  margin-bottom: var(--poltics-spacing-md);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.poltics-side-articles {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--poltics-spacing-lg);
+  margin-top: var(--poltics-spacing-lg);
+}
+
+.poltics-side-title {
+  margin-bottom: var(--poltics-spacing-xs);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.poltics-more {
+  text-align: right;
+  margin-top: var(--poltics-spacing-lg);
+}
+
+.poltics-more-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.poltics-more-link:hover {
+  text-decoration: underline;
+}
+
+.poltics-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--poltics-spacing-lg);
+}
+
+/* Adds a border and padding to sidebar items for separation. */
+.poltics-sidebar-item.poltics-sidebar-border {
+  padding-bottom: var(--poltics-spacing-lg); /* Space between content and the border line */
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Media Queries --- */
+
+@media (min-width: 768px) {
+  .poltics-main-content {
+    flex-direction: row;
+  }
+
+  .poltics-side-articles {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .poltics-row {
+    flex-direction: row;
+  }
+
+  .poltics-sidebar {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+  padding: 1rem; /* UPDATED */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.carousel-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 500ms ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.overlay-text {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .overlay-text {
+    font-size: 1.25rem;
+  }
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  color: #ffffff;
+  transition: background-color 300ms ease-in-out;
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.nav-btn-prev {
+  left: 1rem;
+}
+
+.nav-btn-next {
+  right: 1rem;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  column-gap: 0.5rem;
+}
+
+.pagination-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition: all 300ms ease-in-out;
+  background-color: #9ca3af;
+  cursor: pointer;
+  border: none;
+}
+
+.pagination-dot.active {
+  background-color: #1f2937;
+  width: 1.5rem;
+}

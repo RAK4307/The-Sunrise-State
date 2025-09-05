@@ -1,0 +1,107 @@
+/* === Slide Drawer === */
+.slide-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.slide-drawer.open {
+  transform: translateX(0);
+}
+
+/* Overlay */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+/* Header */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.drawer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.close-button {
+  font-size: 1.2rem;
+}
+
+/* Links */
+.drawer-links {
+  list-style: none;
+  padding: 24px 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.drawer-links li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #111;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.drawer-links li a:hover {
+  color: #0056b3;
+}
+
+.chevron {
+  font-size: 1.2rem;
+  color: #999;
+}
+
+/* Footer */
+.drawer-footer {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer-footer .subscribe-btn,
+.drawer-footer .signin-btn {
+  width: 100%;
+}
+
+.submit-letter-link {
+  text-align: center;
+  display: block;
+  font-size: 0.9rem;
+  color: #495057;
+  text-decoration: none;
+}
+
+.submit-letter-link:hover {
+  text-decoration: underline;
+}

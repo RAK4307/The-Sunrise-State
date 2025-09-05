@@ -1,0 +1,104 @@
+.grievance-container {
+    background-color: #ffffff;
+    padding: 3rem 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+}
+
+.grievance-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grievance-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.grievance-header h1 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.intro-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.section p {
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.grievance-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.grievance-list li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+}
+
+.grievance-list li::before {
+    content: '›';
+    position: absolute;
+    left: -1.5rem;
+    color: #0073E6;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.address-text,
+.officer-details {
+    line-height: 1.6;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-left: 3px solid #e5e7eb;
+}
+
+.grievance-link {
+    color: #0073E6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.grievance-link:hover {
+    text-decoration: underline;
+}
+
+.officer-name {
+    font-size: 1.1rem;
+}

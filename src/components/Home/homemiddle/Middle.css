@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Web Stories Section (Middle.css)
+   - This file assumes the CSS variables from Home.css are available.
+   ========================================================================== */
+
+.middle-bg {
+  padding-block: var(--spacing-12, 3rem);
+}
+
+.middle-container {
+  max-width: 1200px;
+  padding-inline: var(--spacing-8, 2rem);
+  margin-inline: auto;
+}
+
+.webstories-relative {
+  position: relative;
+}
+
+.webstories-title {
+  font-size: var(--font-size-2xl, 1.5rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-primary, #111827);
+  margin-bottom: var(--spacing-6, 1.5rem);
+  padding-bottom: var(--spacing-2, 0.5rem);
+  border-bottom: 2px solid var(--color-accent, #3b82f6);
+  display: inline-block;
+}
+
+.webstories-scroll {
+  display: flex;
+  gap: var(--spacing-6, 1.5rem);
+  overflow-x: auto;
+  /* Default padding for scrollbar. Increased on desktop to make space for nav buttons. */
+  padding-bottom: var(--spacing-4, 1rem);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.webstories-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and Opera */
+}
+
+.webstories-card {
+  position: relative;
+  flex: 0 0 auto;
+  flex-basis: 180px; /* Fixed width for cards */
+  aspect-ratio: 3 / 5;
+  border-radius: var(--border-radius-lg, 0.75rem);
+  overflow: hidden;
+  transition: var(--transition-smooth, all 300ms ease-in-out);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.webstories-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.webstories-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.webstories-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 40%, transparent 70%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-4, 1rem);
+}
+
+.webstories-card-title {
+  color: var(--color-text-light, #fff);
+  font-size: var(--font-size-base, 1rem);
+  font-weight: var(--font-weight-semibold, 600);
+  line-height: 1.3;
+}
+
+.webstories-nav {
+  position: absolute;
+  bottom: 1rem; /* Position buttons below the cards */
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4, 1rem);
+}
+
+.webstories-arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius-full, 9999px);
+  background-color: var(--color-background, #fff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  color: var(--color-secondary, #6b7280);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast, all 150ms ease-in-out);
+}
+
+.webstories-arrow:hover {
+  background-color: var(--color-border, #f3f4f6);
+  color: var(--color-primary, #111827);
+}
+
+.webstories-arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.webstories-more {
+  font-size: var(--font-size-base, 1rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-accent, #3b82f6);
+  text-decoration: none;
+  padding: var(--spacing-2, 0.5rem) var(--spacing-4, 1rem);
+  border-radius: var(--border-radius-full, 9999px);
+  background-color: var(--color-background, #fff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  transition: var(--transition-fast, all 150ms ease-in-out);
+}
+
+.webstories-more:hover {
+  background-color: var(--color-accent, #3b82f6);
+  color: var(--color-text-light, #fff);
+  border-color: var(--color-accent, #3b82f6);
+  text-decoration: none;
+}
+
+/* Add space for nav buttons on desktop */
+@media (min-width: 768px) {
+  .webstories-scroll {
+    padding-bottom: 4.5rem; /* 2.5rem for buttons + 1rem space + 1rem scrollbar space */
+  }
+}
+/* Media Queries for responsiveness */
+@media (max-width: 767px) {
+  .middle-container {
+    padding-inline: var(--spacing-4, 1rem);
+  }
+
+  .webstories-card {
+    flex-basis: 150px; /* Smaller cards on mobile */
+  }
+
+  .webstories-nav {
+    display: none; /* Hide arrows on mobile, rely on touch scroll */
+  }
+}

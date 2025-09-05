@@ -1,0 +1,132 @@
+.terms-container {
+    background-color: #ffffff;
+    padding: 3rem 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+}
+
+.terms-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.terms-header h1 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.byline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.editorial-board {
+    font-weight: 600;
+    color: #111827;
+}
+
+.date-info {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.date-info p {
+    margin: 0.25rem 0;
+}
+
+.intro-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.section p {
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.terms-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.terms-list li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+}
+
+.terms-list li::before {
+    content: '›';
+    position: absolute;
+    left: -1.5rem;
+    color: #0073E6;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.address-block {
+    font-style: normal;
+    line-height: 1.6;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-left: 3px solid #e5e7eb;
+}
+
+.address-block a, .terms-link {
+    color: #0073E6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.address-block a:hover, .terms-link:hover {
+    text-decoration: underline;
+}
+
+.last-updated {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-style: italic;
+}

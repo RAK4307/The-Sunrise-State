@@ -1,0 +1,176 @@
+/* --- Root Variables for Theming --- */
+:root {
+  --signup-bg-color: #f8f9fa; /* A very light grey for a softer background */
+  --signup-container-bg: #ffffff;
+  --signup-primary-color: #4f46e5; /* Accent color from navbar */
+  --signup-primary-hover: #4338ca;
+  --signup-text-primary: #1f2937;
+  --signup-text-secondary: #6b7280;
+  --signup-border-color: #d1d5db;
+  --signup-input-bg: #ffffff; /* White background for inputs */
+  --signup-input-border-focus: #9ca3af; /* Lighter border on focus */
+  --signup-error-color: #ef4444;
+  --signup-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  --signup-font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --- Page Layout --- */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--signup-bg-color); /* Use the defined background color */
+  font-family: var(--signup-font-family);
+  padding: 1rem;
+}
+
+/* --- Signup Container --- */
+.signup-container {
+  background-color: var(--signup-container-bg);
+  padding: 2.5rem; /* Consistent padding */
+  border-radius: 8px;
+  box-shadow: var(--signup-box-shadow); /* More pronounced shadow */
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* --- Header --- */
+.signup-header {
+  margin-bottom: 1.5rem;
+}
+
+.signup-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700; /* Bold for headings */
+  color: var(--signup-text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.signup-header p {
+  font-size: 0.95rem;
+  color: var(--signup-text-secondary);
+  margin: 0;
+}
+
+/* --- Form Elements --- */
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block; /* Labels on their own line */
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--signup-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%; /* Full width inputs */
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--signup-border-color);
+  border-radius: 6px;
+  background-color: var(--signup-input-bg); /* Input background */
+  font-size: 1rem;
+  color: var(--signup-text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box; /* Ensure consistent box model */
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--signup-primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* --- Buttons --- */
+.signup-button {
+  width: 100%; /* Full width buttons */
+  padding: 0.875rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: var(--signup-primary-color); /* Primary button color */
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.signup-button:hover {
+  background-color: var(--signup-primary-hover);
+}
+
+/* --- Login Link --- */
+.login-link {
+  font-size: 0.9rem;
+  color: var(--signup-text-secondary); /* Smaller text for login link */
+}
+
+.login-link a {
+  color: var(--signup-primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #d9534f; /* Error text color */
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+}
+
+.message-overlay {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  z-index: 1000;
+  background-color: #d4edda; /* Light green background for success */
+  color: #155724; /* Dark green text */
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  animation: fadeInDown 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.message-overlay.fade-out-up {
+  animation: fadeOutUp 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
