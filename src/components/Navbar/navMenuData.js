@@ -117,7 +117,7 @@ export const navMenuData = {
             { initials: 'CJ', name: 'Charlie Johnson', description: 'Wildlife photographer', bgColor: '#ffedd5', textColor: '#9a3412' }
         ]
     },
-    Lifestyle: {
+    LifeStyle: {
         sections: ['Lifestyle', 'Health', 'Travel', 'Food', 'Fashion', 'Wellness'],
         topStories: ['Healthy Living', 'Travel Tips', 'Culinary Delights', 'Fashion Trends', 'Mindfulness', 'Fitness Goals'],
         newsletters: [

@@ -1,5 +1,4 @@
 import React from 'react';
-import './India.css'; // Reusing the same style for consistency
 
 // Placeholder data for India articles
 const indiaArticles = [

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Style.css';
 
 // In a real-world application, this data would likely come from a CMS or an API.
 const agricultureArticles = [

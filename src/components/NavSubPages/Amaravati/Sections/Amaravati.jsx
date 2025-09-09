@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// Placeholder data for Amaravati articles
 const amaravatiArticles = [
   {
     id: 1,
@@ -37,36 +35,32 @@ const amaravatiArticles = [
   },
 ];
 
-const Amaravati = () => {
-  return (
-    <div className="category-page-container">
-      <nav className="breadcrumb">
-        <a href="/">Home</a> / <a href="/news">News</a> / <span>Amaravati</span>
-      </nav>
-
-      <header className="category-header">
-        <h1 className="main-heading">Amaravati News</h1>
-        <p className="subheading">The latest on events, development, and culture from Amaravati.</p>
-      </header>
-
-      <div className="article-list">
-        {amaravatiArticles.map((article) => (
-          <Link to={`/news/amaravati/${article.id}`} key={article.id} className="article-card-link">
-            <div className="article-card">
-              <img src={article.imageUrl} alt={article.title} className="article-image" />
-              <div className="article-content">
-                <h2 className="article-title">{article.title}</h2>
-                <p className="article-summary">{article.summary}</p>
-                <div className="article-meta">
-                  <span className="article-author">{article.author}</span> - <span className="article-date">{article.date}</span>
-                </div>
+const Amaravati = () => (
+  <div className="category-page-container">
+    <nav className="breadcrumb">
+      <a href="/">Home</a> / <a href="/news">News</a> / <span>Amaravati</span>
+    </nav>
+    <header className="category-header">
+      <h1 className="main-heading">Amaravati News</h1>
+      <p className="subheading">The latest on events, development, and culture from Amaravati.</p>
+    </header>
+    <div className="article-list">
+      {amaravatiArticles.map((article) => (
+        <Link to={`/news/amaravati/${article.id}`} key={article.id} className="article-card-link">
+          <div className="article-card">
+            <img src={article.imageUrl} alt={article.title} className="article-image" />
+            <div className="article-content">
+              <h2 className="article-title">{article.title}</h2>
+              <p className="article-summary">{article.summary}</p>
+              <div className="article-meta">
+                <span className="article-author">{article.author}</span> - <span className="article-date">{article.date}</span>
               </div>
             </div>
-          </Link>
-        ))}
-      </div>
+          </div>
+        </Link>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default Amaravati;
